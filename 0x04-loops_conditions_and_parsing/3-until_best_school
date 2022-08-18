@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#until statement
+
+x=9
+until [ $x -lt '0' ]
+do
+	echo 'Best School'
+	((x--))
+done
