@@ -2,7 +2,7 @@
 #until statement
 
 x=9
-until [ $x -lt '0' ]
+until [ $x -le 1 ]
 do
 	echo 'Best School'
 	((x--))
