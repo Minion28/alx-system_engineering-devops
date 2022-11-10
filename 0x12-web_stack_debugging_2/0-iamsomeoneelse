@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script that accepts one argument to run whoami command
+
+sudo -H -u "$1" bash -c 'whoami'
