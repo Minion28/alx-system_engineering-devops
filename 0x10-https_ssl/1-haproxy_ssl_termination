@@ -34,9 +34,11 @@ defaults
 	errorfile 504 /etc/haproxy/errors/504.http
 frontend web-front
 	bind *:80
+	bind *:443 ssl crt /etc/haproxy/certs/www.realkevmwan.tech.pem
+	redirect scheme https if !{ ssl_fc }
 	mode http
 	default_backend web-backend
 backend web-backend
 	balance roundrobin
-	server 37456-web-01 34.229.63.78:80 check port 80
-	server 37456-web-02 18.207.236.83:80 check port 80
+	server 37456-web-01 34.229.63.78:80 check
+	server 37456-web-02 18.207.236.83:80 check
